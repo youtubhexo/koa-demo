@@ -1,0 +1,37 @@
+{
+  "name": "koa-demo",
+  "version": "1.0.0",
+  "description": "\"AI赋能开发\"  代码开发样例",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youtubhexo/koa-demo.git"
+  },
+  "keywords": [
+    "koa",
+    "AI赋能开发",
+    "路由",
+    "跨域处理",
+    "压缩",
+    "静态资源",
+    "协议处理",
+    "安全",
+    "日志"
+  ],
+  "author": "desperado <desperado@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/youtubhexo/koa-demo/issues"
+  },
+  "homepage": "https://github.com/youtubhexo/koa-demo#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "dependencies": {
+    "koa": "^2.15.3"
+  }
+}
