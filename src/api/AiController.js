@@ -4,7 +4,7 @@ const Router = require('@koa/router')
 
 const demo1=(ctx) => {
     // ctx.router available
-    ctx.body = ('AI赋能开发')
+    ctx.body = ('AI赋能开发 nodemon测试  babel-node')
   };
   const demo2= async(ctx) => {
   const result = await new Promise((resolve) => {
