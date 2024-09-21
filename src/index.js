@@ -1,10 +1,8 @@
 const Koa = require('koa');
-const Router = require('@koa/router');
+const router=require('./routers/router')
 const { koaBody } = require('koa-body');
 const cors = require('@koa/cors');
 const app = new Koa();
-const router = new Router();
-
 
 //  request   response
 //  router  ->根据不同的路由，跳转到不同的方法
@@ -21,25 +19,11 @@ const router = new Router();
 
 
 
-router.get('/', (ctx, next) => {
-  // ctx.router available
-  ctx.body='AI赋能开发'
-});
 
-router.get('/about', (ctx, next) => {
-  // ctx.router available
-  ctx.body='这是关于页面的api数据'
-});
-router.post('/users', koaBody(), (ctx) => {
-  console.log(ctx.request.body);
-  // => POST body
-  ctx.body = ctx.request.body;
-});
 app.use(koaBody());
 app.use(cors());
 
 app
-.use(router.routes())
-.use(router.allowedMethods());
-app.use(cors());
+.use(router())
+;app.use(cors());
 app.listen(3000);
