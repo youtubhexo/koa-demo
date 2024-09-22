@@ -1,13 +1,14 @@
 const path=require('path')
+const webpack=require('webpack')
 const nodeExcternals =require('webpack-node-externals')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 const webpackconfig=
 
  {
-    entry: path.join(__dirname,"src/index.js"),
+    entry: path.join(__dirname,"../src/index.js"),
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         filename: '[name].bundle.js'
       },
       module: {
@@ -23,10 +24,17 @@ const webpackconfig=
       externals: [nodeExcternals()],
       
       plugins: [
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new webpack.DefinePlugin({
+            'process.env':{
+              NODE_ENV:(process.env.NODE_ENV==='production'||
+                process.env.NODE_ENV==='prod')?"'production'":
+                "'development'"
+            }
+        })
       ],
-      mode: 'development',
-      devtool:'eval-source-map',
+    
+      
       target:"node",
       node: {
         console: true,
